@@ -5,8 +5,6 @@ package PartB;
 Files
  */
 
-// To be done
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -51,9 +49,9 @@ public class Prog3 {
 		JButton b1 = new JButton("SUBMIT");
 		JButton b2 = new JButton("RESET");
 		b1.addActionListener(new ActionListener() {
-			@Overridepublic
-			void actionPerformed(ActionEvent e) {
-				File fileobj = new File("/home/k4u5h4l/eclipse-workspace/Internals_portions/src/PartB/File.txt");
+
+			public void actionPerformed(ActionEvent e) {
+				File fileobj = new File("/home/k4u5h4l/java-swing.txt");
 				try {
 					FileWriter fw = new FileWriter(fileobj.getAbsoluteFile(), true);
 					System.out.println("\n NAME : " + f1.getText() + "\n" + "ID : " + f2.getText() + "\n" + "DOJ : "
