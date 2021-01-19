@@ -60,7 +60,14 @@ public class Prog1 {
 			obj[i] = new Prog1(i);
 		}
 		
-		int key =  Integer.parseInt(args[0]);
+		int key = 0;
+		
+		try {
+			key =  Integer.parseInt(args[0]);
+		} catch (ArrayIndexOutOfBoundsException ae) {
+			System.out.println("No cmd line args were given. Exiting...");
+			System.exit(0);
+		}
 		
 		int pos = -1;
 		
@@ -73,6 +80,7 @@ public class Prog1 {
 		
 		if (pos == -1) {
 			System.out.println("The employee with that number wasn't found");
+			System.exit(0);
 		} else {
 			obj[pos].show();		
 		}
