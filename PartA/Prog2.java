@@ -7,105 +7,116 @@ import java.util.Scanner;
 	implementing the concept of method overriding
  */
 
-// Still not complete
-
-class MatrixClass {
-	int[][] mat = new int[10][10];
-	int m, n;
+class mat
+{
+	int a[][] = new int[10][10];
+	int m,n;
 	
-	MatrixClass() {
-		int i, j;
+	public void compute()
+	{
 		
-		Scanner scan1 = new Scanner(System.in);
-		
-		System.out.println("Enter rows length");
-		
-		m = scan1.nextInt();
-		
-		System.out.println("Enter columns length");
-		
-		n = scan1.nextInt();
-		
-		System.out.println("Enter matrix:");
-		
-		for (i = 0; i < m; i++) {
-			for (j = 0; j < n; j++) {
-				mat[i][j] = scan1.nextInt();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the row size");
+		int m = s.nextInt();
+		System.out.println("Enter the column size");
+		int n = s.nextInt();
+		int[][] tmat = new int[n][m];
+		System.out.println("Enter the values for the matrix");
+		for(int i=0; i<m;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				a[i][j] = s.nextInt();
 			}
 		}
 		
-		scan1.close();
+		for(int i=0; i<m;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				tmat[j][i] = a[i][j];
+			}
+		}
+		System.out.println("The transpose is");
+		for(int i=0; i<n;i++)
+		{
+			for(int j=0;j<m;j++)
+			{
+				System.out.printf(tmat[i][j]+"\t");	
+			}
+			System.out.println("");
+		}
+
 	}
 	
-	void compute() {
-		int[][] transMat = new int[10][10];
-		int i, j;
+}
+
+class arr extends mat
+{
+	int a[] = new int[10];
+	int size;
+	
+	public void compute()
+	{
 		
-		for (i = 0; i < m; i++) {
-			for (j = 0; j < n; j++) {
-				transMat[j][i] = mat[i][j];
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter lenght of array");
+		int size = s.nextInt();
+		System.out.println("Enter the values of the array");
+		for(int i=0;i<size;i++)
+			a[i] = s.nextInt();
+		
+		
+		int en=0;
+		int on=0;
+		int e[] = new int[size];
+		int o[] = new int[size];
+		
+		for(int i=0;i<size;i++)
+		{
+			if(a[i]%2==0)
+			{
+				e[en] = a[i];
+				en++;
 			}
+			else if(a[i]%2!=0)
+			{
+				o[on] = a[i];
+				on++;
+			}
+				
 		}
-		
-		for (i = 0; i < m; i++) {
-			for (j = 0; j < n; j++) {
-				System.out.print(transMat[i][j]);
-			}
-			System.out.print("\n");
+		System.out.println("The array of even elements is:");
+		for(int i=0;i<en;i++)
+		{
+			System.out.println(e[i] + "\t");
+		}
+		System.out.println("The array of odd elements is:");
+		for(int i=0;i<on;i++)
+		{
+			System.out.println(o[i] + "\t");
 		}
 	}
 }
-
-public class Prog2 extends MatrixClass {
-	int[] arr = new int[20];
-	int[] odd = new int[20];
-	int[] even = new int[20];
+public class Prog2
+{
 	
-	Prog2() {
-		super();
-		
-		int i;
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Enter length of array:");
-		int n = scan.nextInt();
-		
-		System.out.println("Enter the array:");
-		
-		for (i = 0; i < n; i++) {
-			arr[i] = scan.nextInt();
+	public static void main(String[] args)
+	{
+		int choice;
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter Choice\n1.Array\n2.Transpose");
+		choice = s.nextInt();
+		switch(choice)
+		{
+			case 1: arr obj1 = new arr();
+					obj1.compute();
+					break;
+					
+			case 2: mat obj2 = new mat();
+					obj2.compute();
+					break;
+							
 		}
-		scan.close();
-	}
-	
-	void compute() {
-		int i;
-		int oddIndex = 0, evenIndex = 0;
-		
-		for (i = 0; i < arr.length; i++) {
-			if (arr[i] % 2 == 0) {
-				even[evenIndex++] = arr[i];
-			} else {
-				odd[oddIndex++] = arr[i];
-			}
-		}
-		System.out.println("Odd array:");
-		for (i = 0; i < odd.length; i++) {
-			System.out.println(odd[i]);
-		}
-		
-		System.out.println("Even array:");
-		for (i = 0; i < even.length; i++) {
-			System.out.println(even[i]);
-		}
-	}
-	
-	public static void main(String args[]) {
-		Prog2 obj1 = new Prog2();
-//		MatrixClass obj2 = new MatrixClass();
-		
-		obj1.compute();
-		
-//		obj2.compute();
 	}
 }
