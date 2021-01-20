@@ -57,7 +57,7 @@ public class Prog3 {
 			public void actionPerformed(ActionEvent e) {
 				File fileobj = new File("/home/k4u5h4l/java-swing.txt");
 				try {
-					FileWriter fw = new FileWriter(fileobj.getAbsoluteFile(), true);
+					FileWriter fw = new FileWriter(fileobj.getAbsoluteFile(), true); // (File oject, append true)
 					System.out.println("\n NAME : " + f1.getText() + "\n" + "ID : " + f2.getText() + "\n" + "DOJ : "
 							+ f3.getText() + "\n" + "DOB : " + f4.getText() + "\n");
 					fw.write("\n NAME : " + f1.getText() + "\n" + "ID : " + f2.getText() + "\n" + "DOJ : "
@@ -70,7 +70,7 @@ public class Prog3 {
 		});
 		
 		b2.addActionListener(new ActionListener() {
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				f1.setText(" ");
 				f2.setText(null);
@@ -88,11 +88,12 @@ public class Prog3 {
 		p8.add(f4);
 		p9.add(b1); // add buttons to panel
 		p10.add(b2);
-//l1.setBorder(BorderFactory.createLineBorder(Color.black));
-		l1.setBorder(BorderFactory.createLineBorder(black, 10));
-		l2.setBorder(BorderFactory.createLineBorder(black, 10));
-		l3.setBorder(BorderFactory.createLineBorder(black, 10));
-		l4.setBorder(BorderFactory.createLineBorder(black, 10));
+		
+		l1.setBorder(BorderFactory.createLineBorder(black, 1));
+		l2.setBorder(BorderFactory.createLineBorder(black, 1));
+		l3.setBorder(BorderFactory.createLineBorder(black, 1));
+		l4.setBorder(BorderFactory.createLineBorder(black, 1));
+		
 		frameobj.add(p1); // add panels to frames
 		frameobj.add(p2);
 		frameobj.add(p3);
