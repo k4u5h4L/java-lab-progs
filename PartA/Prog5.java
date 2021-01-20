@@ -1,3 +1,4 @@
+package PartA;
 
 //import java.util.Scanner;
 
@@ -12,7 +13,8 @@ class Node {
 
 	Node(int item) { 
 		data = item; 
-		left = right; 
+		left = null;
+		right = null;
 	} 
 } 
 
