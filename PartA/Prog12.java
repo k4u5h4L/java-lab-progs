@@ -31,6 +31,7 @@ public class Testing implements GetHappyNumber.FindIfHappyOrNot {
     	System.out.println("Enter number");
     	int n = s.nextInt();
     	Testing obj = new Testing(n);
+	obj.findSum(); 
     	while (obj.n != 1 && obj.n >= 10) {
     		obj.findSum();    		
     	}
