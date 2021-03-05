@@ -5,14 +5,7 @@ package PartB;
 application, using JDBC.
  */
 
-package jdbctest;
-
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import java.util.Scanner;
 
 public class jdbctest2 {
